@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="200bd7d2-6488-4f1c-b413-c6c4d72d77ea"></script>
+
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>FillShelves — Simple Stocky Replacement | Restock &amp; Purchase Orders</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+  <style>/* latin-ext */
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("b93281d9-a1ac-40ad-8ea7-eebe21f97c3b") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("aedd70d9-945f-4300-83c1-1cd6521c3c0e") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("1ccde726-b941-4147-a7b0-ee0ab8a5fa2c") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Courier Prime';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("50b9c47d-946f-4841-a052-4569c30c2e31") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("e0e04931-8bc8-4dc1-a6b5-1a90bce6388a") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("a81a8a01-0aab-4366-b2ef-c87f2ad62d53") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("7ee174f3-91e8-49b8-871c-4729576bc4c3") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("c9d3bae0-dde8-44fe-a45f-71af7ce49ee8") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("4011cadd-63c1-4b29-9421-0090e4778ccc") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("32ed208b-ba2e-4bae-8989-ea9a88cb6dd3") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("9441b322-b6fe-4063-81ce-598f61d7efe1") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("382d7d08-3f4e-4aa8-ae98-533cdd984da7") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("ecd3d63a-24bb-404b-9917-38f69d66927b") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("70f6a69a-b904-4e0f-8ff7-91353905cd33") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* cyrillic-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("e22936df-04b4-4fd7-bb2a-3c494ce08f23") format('woff2');
+  unicode-range: U+0460-052F, U+1C80-1C8A, U+20B4, U+2DE0-2DFF, U+A640-A69F, U+FE2E-FE2F;
+}
+/* cyrillic */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("314951d1-d105-4e77-888f-54574792ab60") format('woff2');
+  unicode-range: U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("42f75f7e-60fb-4623-a193-434bbcd555a5") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("978b8a7e-68dc-4979-af5f-6cd17f6f0027") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("a9d15f94-ffb3-4da1-b38e-d4278513a425") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("7fceac54-ff7e-48cb-a98e-3be11d0ed07f") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("9f9677b4-e881-43ea-a8ed-820b838ef9c0") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("84d588a5-7fde-41ff-abc5-70a7c04736bf") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* vietnamese */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("f26e6e08-b0cb-416e-8558-672be778ae55") format('woff2');
+  unicode-range: U+0102-0103, U+0110-0111, U+0128-0129, U+0168-0169, U+01A0-01A1, U+01AF-01B0, U+0300-0301, U+0303-0304, U+0308-0309, U+0323, U+0329, U+1EA0-1EF9, U+20AB;
+}
+/* latin-ext */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("caf86c2b-faea-4319-a334-cef0dcc440ea") format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Space Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("84a994bd-6fa5-4346-85d6-5dba24ed31b9") format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+</style>
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { -webkit-font-smoothing: antialiased; }
+  </style>
+</helmet>
+
+<div style="min-height:100vh; background:{{ desk }}; color:{{ ink }}; font-family:'{{ font }}', 'Courier New', monospace;">
+
+  <!-- ===== 1. Countdown banner ===== -->
+  <div style="background:{{ ink }}; color:{{ paper }}; text-align:center; padding:10px 16px; font-size:13px; line-height:1.6; letter-spacing:0.3px;">
+    Stocky shuts down August 31, 2026 — <strong style="color:{{ accentBright }}; font-weight:700;">{{ days }} days</strong> away. FillShelves launches early August.
+  </div>
+
+  <!-- ===== The receipt ===== -->
+  <div style="max-width:660px; margin:0 auto; padding:clamp(20px, 5vw, 56px) 12px 80px;">
+    <div style="filter:drop-shadow(0 20px 36px rgba(30, 20, 10, 0.18));">
+
+      <div style="height:14px; background:{{ edgeTop }};"></div>
+
+      <div style="background-color:{{ paper }}; background-image:repeating-linear-gradient(0deg, rgba(0,0,0,0.018) 0 1px, transparent 1px 4px); padding:clamp(26px, 6vw, 48px) clamp(18px, 5vw, 44px);">
+
+        <!-- Receipt header -->
+        <header style="text-align:center; display:grid; gap:10px; margin-bottom:30px;">
+          <div style="font-size:12px; letter-spacing:6px; color:{{ muted }};">* * * * * * * * * *</div>
+          <div style="font-size:21px; font-weight:700; letter-spacing:7px;">FILLSHELVES</div>
+          <div style="font-size:11px; letter-spacing:2.5px; color:{{ muted }}; text-transform:uppercase;">Restock · Purchase orders · Shopify POS</div>
+          <div style="font-size:12px; letter-spacing:6px; color:{{ muted }};">* * * * * * * * * *</div>
+        </header>
+
+        <!-- ===== 2. Hero ===== -->
+        <section style="position:relative; border-top:1.5px dashed {{ rule }}; padding-top:30px;">
+          <sc-if value="{{ showStamp }}" hint-placeholder-val="{{ true }}">
+            <div style="position:absolute; top:14px; right:0; transform:rotate(-7deg); border:3px double {{ accent }}; color:{{ accent }}; padding:6px 12px; font-size:11px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; opacity:0.85; mix-blend-mode:multiply; pointer-events:none;">Launching Aug 2026</div>
+          </sc-if>
+          <h1 style="font-size:clamp(32px, 8vw, 52px); line-height:1.08; margin:0 0 18px; font-weight:700; max-width:12ch;">The simple Stocky replacement.</h1>
+          <p style="font-size:clamp(15px, 2.5vw, 17px); line-height:1.7; color:{{ inkSoft }}; margin:0 0 26px; max-width:54ch;">The 'fill my shelves' button is coming back. FillShelves looks at what sold, suggests what to reorder, and turns it into purchase orders your vendors can act on.</p>
+
+          <!-- ============================================================
+               FORM #1 — REPLACE the action URL below with your form
+               backend endpoint (both forms post to the same place).
+               ============================================================ -->
+          <form action="https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com" method="POST" style="display:flex; flex-wrap:wrap; gap:10px;">
+            <input type="email" name="email" required="{{ true }}" placeholder="you@yourshop.com" aria-label="Email address" style="flex:1 1 220px; min-width:0; padding:13px 14px; font-family:inherit; font-size:16px; color:inherit; background:transparent; border:1.5px solid {{ ink }}; border-radius:0;">
+            <button type="submit" style="flex:0 0 auto; padding:13px 22px; font-family:inherit; font-size:14px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#FFFDF8; background:{{ accent }}; border:none; border-radius:0; cursor:pointer;" style-hover="filter:brightness(1.1)">Join the waitlist</button>
+          </form>
+          <p style="font-size:13px; line-height:1.6; color:{{ muted }}; margin:12px 0 0;">Free 30-day trial at launch. $15/month after. No tiers, no revenue-based pricing.</p>
+        </section>
+
+        <!-- ===== 3. Flow diagram ===== -->
+        <section style="margin:38px 0; border-top:1.5px dashed {{ rule }}; border-bottom:1.5px dashed {{ rule }}; padding:24px 0;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:4px; color:{{ muted }}; margin-bottom:16px;">HOW IT RUNS</div>
+          <div style="display:flex; flex-direction:{{ flowDir }}; align-items:stretch; gap:6px;">
+            <div style="flex:1 1 0; border:1.5px solid {{ rule }}; padding:12px 14px;">
+              <div style="font-weight:700; letter-spacing:2px; font-size:15px;">SOLD</div>
+              <div style="font-size:12px; color:{{ muted }}; margin-top:4px;">last 30/60/90</div>
+            </div>
+            <div style="align-self:center; color:{{ accent }}; font-weight:700; font-size:18px; line-height:1;">{{ arrow }}</div>
+            <div style="flex:1 1 0; border:1.5px solid {{ rule }}; padding:12px 14px;">
+              <div style="font-weight:700; letter-spacing:2px; font-size:15px;">SUGGEST</div>
+              <div style="font-size:12px; color:{{ muted }}; margin-top:4px;">vs. on hand</div>
+            </div>
+            <div style="align-self:center; color:{{ accent }}; font-weight:700; font-size:18px; line-height:1;">{{ arrow }}</div>
+            <div style="flex:1 1 0; border:1.5px solid {{ rule }}; padding:12px 14px;">
+              <div style="font-weight:700; letter-spacing:2px; font-size:15px;">PO</div>
+              <div style="font-size:12px; color:{{ muted }}; margin-top:4px;">by vendor</div>
+            </div>
+            <div style="align-self:center; color:{{ accent }}; font-weight:700; font-size:18px; line-height:1;">{{ arrow }}</div>
+            <div style="flex:1 1 0; border:1.5px solid {{ rule }}; padding:12px 14px;">
+              <div style="font-weight:700; letter-spacing:2px; font-size:15px;">RECEIVE</div>
+              <div style="font-size:12px; color:{{ muted }}; margin-top:4px;">stock updates</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 4. What it does ===== -->
+        <section>
+          <h2 style="font-size:13px; letter-spacing:4px; font-weight:700; margin:0;">WHAT IT DOES</h2>
+
+          <div style="display:grid; grid-template-columns:auto 1fr; gap:4px 16px; padding:20px 0; border-bottom:1px dashed {{ rule }};">
+            <div style="color:{{ accent }}; font-weight:700;">01</div>
+            <div>
+              <div style="font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Fill shelves in one click</div>
+              <div style="font-size:14px; line-height:1.7; color:{{ inkSoft }};">Restock suggestions from your last 30/60/90 days of sales, checked against what's on hand. Adjust any line — your judgment beats the number.</div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:auto 1fr; gap:4px 16px; padding:20px 0; border-bottom:1px dashed {{ rule }};">
+            <div style="color:{{ accent }}; font-weight:700;">02</div>
+            <div>
+              <div style="font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Purchase orders by vendor</div>
+              <div style="font-size:14px; line-height:1.7; color:{{ inkSoft }};">Grouped, editable, sent as PDF or email. Receive against them, full or partial, and your Shopify inventory updates.</div>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:auto 1fr; gap:4px 16px; padding:20px 0;">
+            <div style="color:{{ accent }}; font-weight:700;">03</div>
+            <div>
+              <div style="font-weight:700; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px;">Works how retail actually works</div>
+              <div style="font-size:14px; line-height:1.7; color:{{ inkSoft }};">Your vendors, your order cycles, your minimums. No demand curves.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ===== 5. What it deliberately doesn't do ===== -->
+        <section style="margin:16px calc(-1 * clamp(18px, 5vw, 44px)) 44px; padding:clamp(28px, 6vw, 42px) clamp(18px, 5vw, 44px); background:{{ ink }}; color:{{ paper }};">
+          <h2 style="font-size:13px; letter-spacing:4px; font-weight:700; margin:0 0 14px;">WHAT IT DELIBERATELY DOESN'T DO</h2>
+
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:11px 0; border-bottom:1px dashed rgba(255,255,255,0.22); font-size:15px;">
+            <span style="text-decoration:line-through; text-decoration-color:{{ accentBright }}; text-decoration-thickness:2.5px;">AI forecasting</span>
+            <span style="color:{{ accentBright }}; font-weight:700; letter-spacing:2.5px; font-size:11px;">VOID</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:11px 0; border-bottom:1px dashed rgba(255,255,255,0.22); font-size:15px;">
+            <span style="text-decoration:line-through; text-decoration-color:{{ accentBright }}; text-decoration-thickness:2.5px;">Multi-channel sync</span>
+            <span style="color:{{ accentBright }}; font-weight:700; letter-spacing:2.5px; font-size:11px;">VOID</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:11px 0; border-bottom:1px dashed rgba(255,255,255,0.22); font-size:15px;">
+            <span style="text-decoration:line-through; text-decoration-color:{{ accentBright }}; text-decoration-thickness:2.5px;">Analytics dashboards</span>
+            <span style="color:{{ accentBright }}; font-weight:700; letter-spacing:2.5px; font-size:11px;">VOID</span>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:12px; padding:11px 0; border-bottom:1px dashed rgba(255,255,255,0.22); font-size:15px;">
+            <span style="text-decoration:line-through; text-decoration-color:{{ accentBright }}; text-decoration-thickness:2.5px;">$349/month tier</span>
+            <span style="color:{{ accentBright }}; font-weight:700; letter-spacing:2.5px; font-size:11px;">VOID</span>
+          </div>
+
+          <p style="font-size:14px; line-height:1.7; margin:18px 0 0; color:rgba(255,255,255,0.85);">If you need those, the big apps are great. If you just want Stocky's restock workflow back for the price of lunch, that's this.</p>
+        </section>
+
+        <!-- ===== 6. Closing block ===== -->
+        <section>
+          <p style="font-size:clamp(15px, 2.5vw, 17px); line-height:1.7; margin:0 0 22px; max-width:54ch;">Built by one developer, launching before the shutdown. Tell me what your restock workflow needs — every reply gets read.</p>
+
+          <!-- FORM #2 — same endpoint as form #1; replace the action URL. -->
+          <form action="https://REPLACE-WITH-YOUR-FORM-ENDPOINT.example.com" method="POST" style="display:flex; flex-wrap:wrap; gap:10px;">
+            <input type="email" name="email" required="{{ true }}" placeholder="you@yourshop.com" aria-label="Email address" style="flex:1 1 220px; min-width:0; padding:13px 14px; font-family:inherit; font-size:16px; color:inherit; background:transparent; border:1.5px solid {{ ink }}; border-radius:0;">
+            <button type="submit" style="flex:0 0 auto; padding:13px 22px; font-family:inherit; font-size:14px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:#FFFDF8; background:{{ accent }}; border:none; border-radius:0; cursor:pointer;" style-hover="filter:brightness(1.1)">Join the waitlist</button>
+          </form>
+        </section>
+
+        <!-- ===== 7. Footer ===== -->
+        <footer style="margin-top:46px; padding-top:24px; border-top:1.5px dashed {{ rule }}; display:grid; gap:16px; justify-items:center; text-align:center;">
+          <div style="height:38px; width:min(240px, 80%); background:repeating-linear-gradient(90deg, {{ ink }} 0 2px, transparent 2px 5px, {{ ink }} 5px 7px, transparent 7px 9px, {{ ink }} 9px 10px, transparent 10px 14px);"></div>
+          <div style="font-size:12px; line-height:1.6; color:{{ muted }};">FillShelves — independent app, not affiliated with Shopify or Stocky.</div>
+          <div style="font-size:12px; letter-spacing:5px; color:{{ muted }};">* * * THANK YOU * * *</div>
+        </footer>
+
+      </div>
+
+      <div style="height:14px; background:{{ edgeBottom }};"></div>
+
+    </div>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script="" data-props="{
+  &quot;accent&quot;: { &quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#C0261B&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Look&quot;, &quot;options&quot;: [&quot;#C0261B&quot;, &quot;#1E6B45&quot;, &quot;#1E4FBF&quot;, &quot;#8A4B0F&quot;] },
+  &quot;paperTone&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;warm&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Look&quot;, &quot;options&quot;: [&quot;warm&quot;, &quot;cool&quot;, &quot;bright&quot;] },
+  &quot;edgeStyle&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;torn&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Look&quot;, &quot;options&quot;: [&quot;torn&quot;, &quot;perforated&quot;, &quot;straight&quot;] },
+  &quot;font&quot;: { &quot;editor&quot;: &quot;enum&quot;, &quot;default&quot;: &quot;Courier Prime&quot;, &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Type&quot;, &quot;options&quot;: [&quot;Courier Prime&quot;, &quot;IBM Plex Mono&quot;, &quot;Space Mono&quot;] },
+  &quot;showStamp&quot;: { &quot;editor&quot;: &quot;boolean&quot;, &quot;default&quot;: true, &quot;tsType&quot;: &quot;boolean&quot;, &quot;section&quot;: &quot;Look&quot; }
+}">
+class Component extends DCLogic {
+  state = { narrow: typeof window !== 'undefined' && window.innerWidth < 620, tick: 0 };
+
+  componentDidMount() {
+    document.title = "FillShelves — Simple Stocky Replacement | Restock & Purchase Orders";
+    this._onResize = () => {
+      const narrow = window.innerWidth < 620;
+      if (narrow !== this.state.narrow) this.setState({ narrow });
+    };
+    window.addEventListener('resize', this._onResize);
+    // Re-check the countdown hourly so the day count stays live.
+    this._timer = setInterval(() => this.setState(s => ({ tick: s.tick + 1 })), 60 * 60 * 1000);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    clearInterval(this._timer);
+  }
+
+  renderVals() {
+    // Live countdown to the Stocky shutdown (local time), never hardcoded.
+    const shutdown = new Date(2026, 7, 31); // August 31, 2026
+    const days = Math.max(0, Math.ceil((shutdown - new Date()) / 86400000));
+
+    const accent = this.props.accent ?? '#C0261B';
+    const font = this.props.font ?? 'Courier Prime';
+    const edge = this.props.edgeStyle ?? 'torn';
+    const tones = {
+      warm:   { paper: '#F7F2E7', desk: '#E2D9C6', ink: '#241F18', muted: '#6E6558' },
+      cool:   { paper: '#F2F4F1', desk: '#D8DDD7', ink: '#1B211E', muted: '#5F6A64' },
+      bright: { paper: '#FBFAF7', desk: '#E7E6E1', ink: '#1A1A19', muted: '#6B6B66' },
+    };
+    const t = tones[this.props.paperTone ?? 'warm'] || tones.warm;
+    const P = t.paper, D = t.desk;
+
+    let edgeTop, edgeBottom;
+    if (edge === 'perforated') {
+      edgeTop = edgeBottom = `radial-gradient(circle, ${D} 3.5px, transparent 4px) 7px 50% / 18px 14px repeat-x, ${P}`;
+    } else if (edge === 'straight') {
+      edgeTop = edgeBottom = P;
+    } else { // torn
+      edgeTop = `linear-gradient(-45deg, ${P} 7px, transparent 0) left bottom / 14px 14px repeat-x, linear-gradient(45deg, ${P} 7px, transparent 0) left bottom / 14px 14px repeat-x`;
+      edgeBottom = `linear-gradient(-135deg, ${P} 7px, transparent 0) left top / 14px 14px repeat-x, linear-gradient(135deg, ${P} 7px, transparent 0) left top / 14px 14px repeat-x`;
+    }
+
+    return {
+      days,
+      accent,
+      accentBright: `color-mix(in oklab, ${accent} 55%, white)`,
+      font,
+      paper: P,
+      desk: D,
+      ink: t.ink,
+      muted: t.muted,
+      inkSoft: `color-mix(in oklab, ${t.ink} 80%, ${P})`,
+      rule: `color-mix(in oklab, ${t.ink} 30%, ${P})`,
+      edgeTop,
+      edgeBottom,
+      showStamp: this.props.showStamp ?? true,
+      flowDir: this.state.narrow ? 'column' : 'row',
+      arrow: this.state.narrow ? '↓' : '→',
+    };
+  }
+}
+</script>
+
+
+</body></html>

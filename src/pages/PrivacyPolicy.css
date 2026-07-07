@@ -1,0 +1,72 @@
+.privacy-content {
+  padding: clamp(30px, 8vw, 60px) clamp(20px, 6vw, 50px);
+}
+
+.policy-text {
+  color: var(--ink);
+  font-size: 15px;
+  line-height: 1.7;
+  max-width: 70ch;
+  margin: 0 auto;
+}
+
+.policy-text h1, .policy-text h2, .policy-text h3 {
+  font-weight: 700;
+  margin-top: 2.5em;
+  margin-bottom: 1em;
+  letter-spacing: 1px;
+}
+
+.policy-text h1 {
+  font-size: 24px;
+  text-align: center;
+  border-bottom: 1.5px dashed var(--rule);
+  padding-bottom: 20px;
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.policy-text h2 {
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--accent);
+  border-bottom: 1px dashed rgba(0,0,0,0.1);
+  padding-bottom: 5px;
+}
+
+.policy-text p {
+  margin-bottom: 1.5em;
+}
+
+.policy-text ul {
+  margin-bottom: 2em;
+  padding-left: 20px;
+}
+
+.policy-text li {
+  margin-bottom: 0.8em;
+  position: relative;
+  list-style-type: none;
+}
+
+.policy-text li::before {
+  content: "—";
+  position: absolute;
+  left: -20px;
+  color: var(--accentBright);
+  font-weight: bold;
+}
+
+.policy-text strong {
+  font-weight: 700;
+  background-color: rgba(192, 38, 27, 0.05);
+  padding: 0 4px;
+}
+
+.policy-text code {
+  font-family: var(--font-mono);
+  background: var(--desk);
+  padding: 2px 6px;
+  font-size: 0.9em;
+  border: 1px solid var(--rule);
+}
