@@ -26,7 +26,7 @@ function App() {
   return (
     <div className="page-wrapper">
       <div className="top-banner">
-        Stocky shuts down August 31, 2026 — <strong className="highlight">{daysAway} days</strong> away. FillShelves launches early August.
+        Stocky shuts down August 31, 2026 — <strong className="highlight">{daysAway} days</strong> away. FillShelves is available now.
       </div>
 
       <div className="receipt-container">
@@ -47,18 +47,18 @@ function App() {
             </header>
 
             <section className="hero-section">
-              <div className="stamp">Launching Aug 2026</div>
+              <div className="stamp">Available Now</div>
               <h1>The simple Stocky replacement.</h1>
               <p className="description">
                 The 'fill my shelves' button is coming back. FillShelves looks at what sold, suggests what to reorder, and turns it into purchase orders your vendors can act on.
               </p>
 
-              <div className="check-back-box">
-                We're currently building. Check back later to join.
-              </div>
+              <a href="https://apps.shopify.com/fillshelves" target="_blank" rel="noopener noreferrer" className="cta-button">
+                Install on Shopify
+              </a>
               
               <p className="pricing">
-                Free 30-day trial at launch. $15/month after. No tiers, no revenue-based pricing.
+                Free 30-day trial. $15/month after. No tiers, no revenue-based pricing.
               </p>
             </section>
 
@@ -142,12 +142,12 @@ function App() {
 
             <section className="closing-section">
               <p className="description">
-                Built by one developer, launching before the shutdown. Tell me what your restock workflow needs — every reply gets read.
+                Built by one developer. Tell me what your restock workflow needs — every reply gets read.
               </p>
 
-              <div className="check-back-box">
-                We're currently building. Check back later to join.
-              </div>
+              <a href="https://apps.shopify.com/fillshelves" target="_blank" rel="noopener noreferrer" className="cta-button">
+                Install on Shopify
+              </a>
             </section>
 
             <footer className="footer">
