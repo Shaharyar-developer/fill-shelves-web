@@ -1,7 +1,11 @@
+import { useMemo } from 'react'
 import { motion } from 'framer-motion'
 import './PrivacyPolicy.css'
+import { privacyMeta } from '../blog/seo'
+import { useDocumentHead } from '../blog/useDocumentHead'
 
 function PrivacyPolicy() {
+  useDocumentHead(useMemo(privacyMeta, []))
   return (
     <div className="page-wrapper">
       <div className="receipt-container" style={{ maxWidth: '800px' }}>

@@ -1,10 +1,15 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 import './App.css'
+import { homeMeta } from './blog/seo'
+import { useDocumentHead } from './blog/useDocumentHead'
 
 function App() {
   const [daysAway, setDaysAway] = useState(58)
   const [isNarrow, setIsNarrow] = useState(false)
+
+  useDocumentHead(useMemo(homeMeta, []))
 
   useEffect(() => {
     const shutdown = new Date(2026, 7, 31) // August 31, 2026
@@ -148,6 +153,11 @@ function App() {
               <a href="https://apps.shopify.com/fillshelves" target="_blank" rel="noopener noreferrer" className="cta-button">
                 Install on Shopify
               </a>
+
+              <p className="pricing" style={{ marginTop: '18px' }}>
+                New to the shutdown?{' '}
+                <Link to="/blog" className="text-link">Read the Stocky shutdown guide →</Link>
+              </p>
             </section>
 
             <footer className="footer">

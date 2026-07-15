@@ -1,0 +1,291 @@
+/* Blog — extends the receipt design language from App.css. */
+
+.blog-container {
+  max-width: 760px;
+}
+
+.blog-title {
+  font-size: clamp(22px, 4.6vw, 30px);
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin: 4px 0;
+  line-height: 1.15;
+}
+
+.blog-back {
+  display: inline-block;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--muted);
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+.blog-back:hover { color: var(--accent); }
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 12px;
+  letter-spacing: 1px;
+  color: var(--muted);
+  margin-bottom: 20px;
+  word-break: break-word;
+}
+.breadcrumb a { color: var(--muted); text-decoration: none; }
+.breadcrumb a:hover { color: var(--accent); text-decoration: underline; }
+.breadcrumb .sep { margin: 0 8px; color: var(--rule); }
+.breadcrumb .current { color: var(--ink); }
+
+/* ---- Blog index ---- */
+
+.blog-intro {
+  font-size: clamp(14px, 2.4vw, 16px);
+  line-height: 1.75;
+  color: var(--inkSoft);
+  max-width: 60ch;
+  margin: 0 auto 8px;
+  text-align: center;
+}
+
+.blog-deadline {
+  text-align: center;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 34px;
+}
+
+.post-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1.5px dashed var(--rule);
+}
+
+.post-card {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6px 18px;
+  padding: 26px 0;
+  border-bottom: 1.5px dashed var(--rule);
+}
+
+.post-card-num {
+  font-weight: 700;
+  color: var(--accent);
+  font-size: 15px;
+  padding-top: 3px;
+}
+
+.post-card-title {
+  font-size: clamp(19px, 3.4vw, 23px);
+  line-height: 1.25;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: 0.2px;
+}
+.post-card-title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+.post-card-title a:hover { color: var(--accent); }
+
+.post-card-meta {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.post-card-desc {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--inkSoft);
+  margin: 0 0 14px;
+}
+
+.post-card-more {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+}
+.post-card-more:hover { text-decoration: underline; }
+
+/* ---- Article ---- */
+
+.post-header { margin-bottom: 8px; }
+
+.post-title {
+  font-size: clamp(27px, 5.6vw, 40px);
+  line-height: 1.12;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: 0.2px;
+}
+
+.post-meta {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 22px;
+  border-bottom: 1.5px dashed var(--rule);
+  margin-bottom: 6px;
+}
+.post-meta .dot { margin: 0 8px; color: var(--rule); }
+
+/* ---- Prose (rendered Markdown) ---- */
+
+.post-prose {
+  font-size: 15px;
+  line-height: 1.75;
+  color: var(--ink);
+}
+
+.post-prose h2 {
+  font-size: clamp(18px, 3vw, 22px);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  border-bottom: 1px dashed var(--rule);
+  padding-bottom: 8px;
+  margin: 2.4em 0 1em;
+}
+
+.post-prose h3 {
+  font-size: 17px;
+  letter-spacing: 0.5px;
+  margin: 2em 0 0.8em;
+}
+
+.post-prose p { margin: 0 0 1.3em; }
+
+.post-prose a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.post-prose a:hover { background: rgba(192, 38, 27, 0.08); }
+
+.post-prose strong { font-weight: 700; }
+
+.post-prose ul, .post-prose ol {
+  margin: 0 0 1.5em;
+  padding-left: 22px;
+}
+.post-prose li { margin-bottom: 0.6em; }
+
+/* GFM task lists (migration checklist) */
+.post-prose li.task-list-item {
+  list-style: none;
+  margin-left: -22px;
+}
+.post-prose li.task-list-item input {
+  margin-right: 10px;
+  accent-color: var(--accent);
+}
+
+/* Callout blockquotes — used for the CTA / notes */
+.post-prose blockquote {
+  margin: 1.8em 0;
+  padding: 18px 22px;
+  border: 1.5px solid var(--rule);
+  border-left: 4px solid var(--accent);
+  background: rgba(192, 38, 27, 0.04);
+  font-size: 14.5px;
+}
+.post-prose blockquote p { margin: 0 0 0.6em; }
+.post-prose blockquote p:last-child { margin-bottom: 0; }
+
+.post-prose code {
+  font-family: var(--font-mono);
+  background: var(--desk);
+  padding: 2px 6px;
+  font-size: 0.9em;
+  border: 1px solid var(--rule);
+}
+
+.post-prose hr {
+  border: none;
+  border-top: 1.5px dashed var(--rule);
+  margin: 2.4em 0;
+}
+
+/* Tables — the comparison grids are the heart of these posts */
+.post-prose .table-scroll {
+  overflow-x: auto;
+  margin: 0 0 1.8em;
+  border: 1.5px solid var(--rule);
+}
+.post-prose table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 13px;
+  min-width: 520px;
+}
+.post-prose th, .post-prose td {
+  text-align: left;
+  padding: 10px 12px;
+  border-bottom: 1px dashed var(--rule);
+  border-right: 1px dashed var(--rule);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.post-prose th {
+  background: var(--ink);
+  color: var(--paper);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+  border-right-color: rgba(255,255,255,0.2);
+}
+.post-prose tbody tr:last-child td { border-bottom: none; }
+.post-prose th:last-child, .post-prose td:last-child { border-right: none; }
+.post-prose tbody tr:nth-child(even) { background: rgba(0,0,0,0.02); }
+
+/* CTA button inside articles */
+.post-cta {
+  margin: 2.6em 0 1em;
+  padding: 26px;
+  border: 2px solid var(--ink);
+  text-align: center;
+}
+.post-cta-text {
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  font-weight: 700;
+}
+
+/* Keep reading */
+.post-related {
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1.5px dashed var(--rule);
+}
+.post-related-title {
+  font-size: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.related-list { list-style: none; margin: 0; padding: 0; }
+.related-item {
+  padding: 12px 0;
+  border-bottom: 1px dashed var(--rule);
+}
+.related-item a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+}
+.related-item a:hover { color: var(--accent); }
+.related-item .related-arrow { color: var(--accent); margin-right: 8px; }
